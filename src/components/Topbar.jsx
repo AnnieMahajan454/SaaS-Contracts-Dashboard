@@ -4,17 +4,17 @@ import { useAuth } from '../context/AuthContext'
 export default function Topbar(){
   const { logout, username } = useAuth()
   return (
-    <div className="flex items-center justify-between px-4 py-3 border-b border-blue-200 bg-gradient-to-r from-white to-blue-50">
+    <div className="flex items-center justify-between px-4 py-3 border-b border-blue-200 dark:border-gray-700 bg-gradient-to-r from-white to-blue-50 dark:from-gray-800 dark:to-gray-900 transition-colors">
       <div className="flex items-center gap-3">
-        <h1 className="text-lg font-semibold text-gray-800">SaaS Contracts</h1>
-        <div className="text-sm text-blue-600 bg-blue-100 px-2 py-1 rounded-full">Dashboard</div>
+        <h1 className="text-lg font-semibold text-gray-800 dark:text-gray-200">SaaS Contracts</h1>
+        <div className="text-sm text-blue-600 dark:text-blue-400 bg-blue-100 dark:bg-blue-900 px-2 py-1 rounded-full">Dashboard</div>
       </div>
       <div className="flex items-center gap-3">
         <div className="text-right hidden sm:block">
-          <div className="font-medium text-gray-800">{username || 'User'}</div>
-          <div className="text-xs text-gray-500">{username ? `${username.toLowerCase()}@company.com` : 'user@company.com'}</div>
+          <div className="font-medium text-gray-800 dark:text-gray-200">{username || 'User'}</div>
+          <div className="text-xs text-gray-500 dark:text-gray-400">{username ? `${username.toLowerCase()}@company.com` : 'user@company.com'}</div>
         </div>
-        <button onClick={logout} className="px-3 py-1 border border-red-300 text-red-600 rounded-lg hover:bg-red-50 transition-colors">Logout</button>
+        <button onClick={logout} className="px-3 py-1 border border-red-300 dark:border-red-600 text-red-600 dark:text-red-400 rounded-lg hover:bg-red-50 dark:hover:bg-red-900 transition-colors">Logout</button>
       </div>
     </div>
   )
