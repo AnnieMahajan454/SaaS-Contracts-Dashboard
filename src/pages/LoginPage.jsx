@@ -8,14 +8,12 @@ export default function LoginPage(){
   const [error, setError] = useState(null)
   const auth = useAuth()
   const nav = useNavigate()
-
   const onSubmit = (e) => {
     e.preventDefault()
     const res = auth.login(username, password)
     if(!res.ok) setError(res.error || 'Invalid')
     else nav('/')
   }
-
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
       <form onSubmit={onSubmit} className="w-full max-w-md bg-white p-6 rounded shadow">
